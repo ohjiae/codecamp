@@ -2,8 +2,55 @@
 <html lang="ko">
 <head>
     <title>final</title>
+    <link href="./final.css" rel="stylesheet">
+    <script src="./final.js"></script>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div class="wrapper__head">
+            코드캠프 회원가입
+        </div>
+        <div class="wrapper__body">
+            <!-- 기본정보 -->
+            <input class=basicInfo id="email" type="email" placeholder="이메일을 입력해 주세요.">
+            <input class=basicInfo id="name" type="text" placeholder="이름을 입력해 주세요.">
+            <input class=basicInfo id="pw1" type="password" placeholder="비밀번호를 입력해 주세요.">
+            <input class=basicInfo id="pw2" type="password" placeholder="비밀번호를 다시 입력해 주세요.">
+            <!-- 휴대폰번호 입력 -->
+            <div class="auth__input">
+                <input class="auth__input__number" type="text" id="phone-01">
+                <div class="auth__input__dash"></div>
+                <input class="auth__input__number" type="text" id="phone-02">
+                <div class="auth__input__dash"></div>
+                <input class="auth__input__number" type="text" id="phone-03">
+            </div>
+            <!-- 인증번호 전송 -->
+            <div class="auth__send">
+                <div class="auth__number">000000</div>
+                <button class="auth__send__btn" onclick="">인증번호 전송</button>
+            </div>
+            <!-- 인증확인 -->
+            <div class="auth__check">
+                <div class="auth__number">3:00</div>
+                <button class="auth__check__btn" onclick="" disabled="true">인증확인</button>
+            </div>
+            <!-- 지역 선택 -->
+            <select class="area">
+                <option disabled="true">지역을 선택하세요</option>
+                <option>서울</option>
+                <option>인천</option>
+                <option>경기</option>
+            </select>
+            <!-- 성별 -->
+            <div class="gender">
+                <input class="gender__btn" type="radio" name="gender">여성
+                <input class="gender__btn" type="radio" name="gender">남성
+            </div>
+            <!-- 구분선 -->
+            <div class="divideLine"></div>
+            <!-- 가입버튼 -->
+            <button class="signup" type="submit" disabled="true">가입하기</button>
+        </div>
+    </div>
 </body>
 </html>
