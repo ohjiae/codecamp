@@ -1,0 +1,128 @@
+
+.background{
+
+    display: flex;
+    justify-content: center;
+    width: 1920px;
+    height: 1080px;
+
+    background: #FFFFFF;
+}
+
+.signup_box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 670px;
+    height: 960px;
+
+    padding-top: 70px;
+    padding-bottom: 72px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    border: 1px solid #AACDFF;
+    box-shadow: 7px 7px 39px rgba(0, 104, 255, 0.25);
+    border-radius: 20px;
+
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    text-align: center;
+
+}
+
+/* 회원 가입을 위해 정보를 입력해 주세요. */
+.headtext{
+    width: 466px;
+    height: 94px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+    text-align: left;
+    color: #0068FF;
+
+}
+/* * 인풋 박스와 타이틀 */
+.input_title{
+    text-align:center;
+    width: 466px;
+    height: 23.65px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #797979;
+    text-align:left;
+}
+
+.input_box{
+    width: 466px;
+    height: 80px;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
+    outline: none;
+    
+}
+
+/* 
+.input_box:focus{
+    transform: scale(1);
+    border-bottom: 1px solid #0068FF;
+    transform: scale(0,1);
+    transition: all 0.5s ease-in;
+    width: 466px;
+
+} */
+
+.underline:focus{
+    transform: scale(1);
+    background-color: #0068FF;
+    display: inline-block;
+    height: 2px;
+
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    width: 466px;
+}
+
+.agreement{
+    width: 454px;
+    height: 21.06px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.lineforsep{
+    width: 470px;
+    border: none;
+    border-bottom: 1px solid #E6E6E6;
+    
+}
+
+.signup_btn{
+    width: 470px;
+    height: 75px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 200px;
+    padding-right:200px;
+    background: #FFFFFF;
+    border: 1px solid #0068FF;
+    border-radius: 10px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    color: #0068FF;
+}
+
+.gender_btn{
+    width: 140px;
+    height: 23.94px;
+}
