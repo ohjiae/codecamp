@@ -6,4 +6,191 @@
 html, body {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+        font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+
+}
+
+.wrapper {
+    width: 540px;
+    height: 960px;
+    background: #FFFFFF;
+    border: 1px solid #AACDFF;
+    box-shadow: 7px 7px 39px rgba(0, 104, 255, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 80px;
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+}
+
+.wrapper__head {
+    width: 100%;
+    height: 47px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+    color: #0068FF;
+    margin: 60px 0px;
+}
+
+.wrapper__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+
+}
+
+.basicInfo {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #D2D2D2;
+    border-radius: 7px;
+    text-align: left;
+    padding: 18px 14.68px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #797979;
+}
+
+
+.auth__input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth__input__number {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #D2D2D2;
+    border-radius: 7px;
+}
+
+.auth__input__dash {
+    width: 12px;
+    border-top: 1px solid black;
+}
+
+.auth__send {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+.auth__number {
+    height: 27px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+    padding-right: 21px;
+    text-align: right;
+    color: #0068FF;
+}
+
+.auth__send__btn {
+    width: 120px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D2D2D2;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #0068FF;
+    white-space: nowrap;
+}
+
+.auth__check {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+.auth__check__btn {
+    width: 120px;
+    height: 40px;
+    background: #0068FF;
+    border: 1px solid #0068FF;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.area {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #D2D2D2;
+    border-radius: 7px;
+    text-align: left;
+    padding: 18px 23px 18px 14.68px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #797979;
+    /* 화살표 하..해야되나 */
+}
+
+.gender {
+    width: 100%;
+    height: 23.94px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* margin: 30px 0px; */
+}
+
+.gender__btn {
+    margin: 5px;
+}
+
+.divideLine {
+    width: 100%;
+    border-top: 1px solid #E6E6E6;
+    /* margin-bottom: 20px; */
+}
+
+.signup {
+    width: 100%;
+    height: 75px;
+    background: #FFFFFF;
+    border: 1px solid #0068FF;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #0068FF;
+    margin-bottom: 53px;
 }
