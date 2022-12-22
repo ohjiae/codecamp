@@ -12,9 +12,9 @@ html, body {
     align-items: center;
     margin-top: 1.5%;
     margin-bottom: 1.5%;
-        font-family: 'Noto Sans CJK KR';
+    font-family: 'Noto Sans CJK KR';
     font-style: normal;
-
+    
 }
 
 .wrapper {
@@ -30,6 +30,13 @@ html, body {
     padding: 0px 80px;
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
+}
+
+button:disabled{
+    color: #D2D2D2;
+    background-color: white;
+    border: 1px solid #D2D2D2;
+    cursor: default;
 }
 
 .wrapper__head {
@@ -49,7 +56,7 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-
+    
 }
 
 .basicInfo {
@@ -66,6 +73,12 @@ html, body {
     color: #797979;
 }
 
+.error__message {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 0px;
+}
 
 .auth__input {
     width: 100%;
@@ -95,7 +108,7 @@ html, body {
     align-items: center;
 }
 
-.auth__number {
+.auth__text {
     height: 27px;
     font-weight: 400;
     font-size: 18px;
@@ -106,6 +119,8 @@ html, body {
     color: #0068FF;
 }
 
+/* 얘를 또 id로 바꾸면 안됨.. id랑 class랑 따로가져가야함 */
+/* 클래스는 색깔 변환이 잘되는데 아디로하면 계속 활성화상태; 위의 비활성화 지정이 안먹힘 */
 .auth__send__btn {
     width: 120px;
     height: 40px;
@@ -118,8 +133,10 @@ html, body {
     /* identical to box height */
     text-align: center;
     color: #0068FF;
+    cursor: pointer;
     white-space: nowrap;
 }
+
 
 .auth__check {
     width: 100%;
@@ -142,6 +159,7 @@ html, body {
     text-align: center;
     color: #FFFFFF;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .area {
@@ -165,6 +183,10 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
     /* margin: 30px 0px; */
 }
 
@@ -194,3 +216,4 @@ html, body {
     color: #0068FF;
     margin-bottom: 53px;
 }
+
