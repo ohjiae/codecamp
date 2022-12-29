@@ -3,12 +3,23 @@
 }
 
 body {
-  background-color: seagreen;
+  background-image: url("./images/Clear.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
   min-height: 100vh;
+}
+
+h1 {
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  opacity: 80%;
+}
+
+input {
+  opacity: 80%;
 }
 
 .todo-container {
@@ -17,8 +28,8 @@ body {
 }
 
 #todo-input {
-  background-color: mintcream;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.457);
+  border: 2px solid white;
   display: block;
   font-size: 2rem;
   padding: 0.5rem 2rem 0.5rem 0.5rem;
@@ -26,10 +37,11 @@ body {
 }
 
 #todo-list {
-  background-color: mintcream;
+  background-color: white;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  opacity: 85%;
 }
 
 #todo-list li {
@@ -51,10 +63,12 @@ li button {
   border: 2px solid black;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 1px 1px 2px gray;
 }
 
 li button:active {
   border: 2px solid grey;
+  box-shadow: -1px -1px black;
 }
 
 .delete-btn-wrapper {
@@ -63,8 +77,18 @@ li button:active {
 
 .delete-btn-wrapper button {
   font-weight: bold;
-  background-color: tomato;
+  background-color: rgb(18, 75, 182);
   padding: 0.2rem 1rem;
   cursor: pointer;
   color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px black;
+  margin-left: 3px;
+  margin-top: 3px;
+}
+
+.delete-btn-wrapper button:active {
+  box-shadow: -1px -1px black;
+  margin-left: 0px;
+  margin-top: 0px;
 }
