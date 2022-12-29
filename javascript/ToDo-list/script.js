@@ -38,7 +38,7 @@ const createTodo = function (storageData) {
 };
 
 const keyCodeCheck = function () {
-  if (window.event.keyCode === 13 && todoInput.value !== "") {
+  if (window.event.keyCode === 13 && todoInput.value.trim() !== "") {
     createTodo();
   }
 };
@@ -84,13 +84,50 @@ if (savedTodoList) {
   }
 }
 
-const accessToGeo = function (position) {
+const weatherDataActive = function ({ location, weather }) {
+  const locationNameTag = document.querySelector("#location-name-tag");
+  locationNameTag.textContent = location;
+};
+
+// *구조분해 할당 적용 2
+const weatherSearch = function ({ latitude, longitude }) {
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=bdbf787a33766e70008f0d6d7b37a12c`
+  )
+    .then((res) => {
+      return res.json();
+      // JSON.parse 는 응답에 body만 있을때, header나 다른요소도 있으면 res.json()으로 받아야함
+    })
+    .then((json) => {
+      console.log(json);
+      const weatherData = {
+        location: json.name,
+        weather: json.weather[0].main,
+      };
+      weatherDataActive(weatherData);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
+const accessToGeo = function ({ coords }) {
+  const { latitude, longitude } = coords;
   const positionObj = {
-    latitude: position.coords.latitude,
-    longitude: position.coords.longitude,
+    //shorthand property (*구조분해할당 적용 1)
+    // 원래 코드
+    // latitude : position.coords.latitude
+    // longitude : 1)position.2)coords.3)longitude
+    // 1) 위의 function(position){~~}의 position 부분 -> ({coords}) 으로 바꿔 맨 앞 position. 부분을 줄임.
+    // 2) 아래 const {latitude, longitude} = coords 라인을 새로 넣어
+    //    구조분해 할당으로 coords. 부분을 줄임
+    // 3) latitude : latitude 같이 키와 값만 남은 상황에서, 키와 값이 같으면 한번만 써도됨 (:와 단어 반복 1개를 생략)
+    // =>  최종적으로 변수 이름만 남음. (관련 강의 : 훈훈자바 - 섹션9.구조분해할당 적용)
+    latitude,
+    longitude,
   };
 
-  console.log(positionObj);
+  weatherSearch(positionObj);
 };
 
 const askForLocation = function () {
