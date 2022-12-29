@@ -57,7 +57,7 @@ let startTimer = () => {
                 document.getElementById("auth__number").innerText = '000000'
                
                 // 타이머가 작동중일때 비활성화만하고 한번 더눌러야 시작함...ㅠㅠㅠ
-            }
+            }   
         }, 1000)
     } else {
         // 타이머 작동중일때.
