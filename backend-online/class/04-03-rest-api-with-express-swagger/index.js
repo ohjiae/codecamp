@@ -1,10 +1,13 @@
 import express from "express";
 import { checkValidationPhone, getToken, sendTokenToSMS } from "./phone.js";
+import swaggerUi from "swagger-ui-express";
+import swaggerJsdoc from "swagger-jsdoc";
+import { options } from "./swagger/config.js";
 
 const app = express();
-
 // express는 json을 처리하지 않음. 그래서 아래 줄처럼 받는 작업을 해줘야함.
 app.use(express.json());
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJsdoc(options)));
 app.get("/boards", (req, res) => {
   // 1. 데이터를 조회하는 로직 => DB에 접속해서 데이터 꺼내오기
   const result = [
