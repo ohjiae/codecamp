@@ -2,8 +2,10 @@ import express from "express";
 import swaggerUi from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
 import { options } from "./swagger/config.js";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJSDoc(options)));
 
@@ -49,8 +51,6 @@ app.get("/users", (req, res) => {
   res.send(profiles);
 });
 
-app.listen(3000, () => {});
-
 // 2. 커피목록 조회 API
 
 app.get("/starbucks", (req, res) => {
@@ -68,3 +68,5 @@ app.get("/starbucks", (req, res) => {
   ];
   res.send(coffeeList);
 });
+
+app.listen(3000, () => {});
