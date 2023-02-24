@@ -11,21 +11,10 @@ import { options } from "./swagger/config.js";
 import cors from "cors";
 
 const app = express();
-// - cors 모듈 설정
-//    CORS설정을 하지 않았다면 VScode의 live server로는 오류, 포스트맨으로 보내야함.(모바일에서도 안막힘.= 브라우저를 사용하지 않아서. Q. 모바일에서 크롬 브라우저 어플을 사용하면 막으려나?)
-//    CORS(Cross Origin Resource Sharing)
-//    > 같은 localhost여도 live server의 포트는 5500인데, 내가 기다리는 포트는 3001번.
-//      다른 주소에서 보내졌다면 보안 차원에서 *브라우저*가 막는 기능
-//    > 막는 것은 '브라우저'가 하지만, Cors에 대한 설정은 '백엔드'에서 지정.
-//    > 1) 특정 url에서 오는 요청만 허용하고 싶다면
-//      app.use(cors({
-//        origin: "허용하고싶은 사이트 url"
-//      }));
-//    > 2) 모든 사이트 허용하고 싶다면
+
 app.use(cors());
 
 // - json 모듈 설정
-// express는 json을 처리하지 않음. 그래서 아래 줄처럼 받는 작업을 해줘야함. 아래가 처리해주는 모듈
 app.use(express.json());
 
 // - swagger 모듈 설정
