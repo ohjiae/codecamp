@@ -101,7 +101,9 @@ app.post("/users", (req, res) => {
 
     // 3. 이메일에 가입환영 템플릿 전송하기
     sendTemplateToEmail(user.email, myTemplate);
-    res.send("가입완료오옹");
+    res.send("가입 완료");
+  } else {
+    res.send("가입 실패");
   }
 });
 
