@@ -1,26 +1,44 @@
-import { getToday, checkAllTrue } from "./utils.js";
+import { getToday } from "./utils.js";
 import nodemailer from "nodemailer";
 import "dotenv/config";
 
 export function checkAllInfo(user) {
   // 1. 다 채워졌는지 확인
   let { username, jumin1, jumin2, site, pw, email } = user;
+  let done = false;
+  let objName = {
+    username: "이름",
+    jumin1: "주민번호",
+    jumin2: "주민번호",
+    site: "좋아하는 사이트",
+    pw: "비밀번호",
+  };
 
-  while (!checkAllTrue(user)) {
-    checkAllTrue(user);
+  for (let key in user) {
+    if (user[key] == "") {
+      console.log(`${objName[key]} 입력란을 확인해주세요`);
+    }
+    done = true;
   }
 
   // 2. 이메일 @ 포함여부 확인
   let checkEmail = () => {
     if (email) {
       if (email.includes("@")) {
-        return true;
+        done = true;
       } else {
         console.log("@가 포함되어야 합니다.");
+        done = false;
       }
     } else {
       console.log("이메일 입력란을 확인해 주세요");
+      done = false;
     }
+
+    if (!done) {
+      return false;
+    }
+    return true;
   };
 }
 
