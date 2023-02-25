@@ -32,11 +32,12 @@ const getValidationNumber = async () => {
 const submitSignup = async () => {
   // 1. 정보 보내기
   let username = document.getElementById("SignupName").value;
+  let jumin1 = document.getElementById("SignupPersonal").value;
+  let jumin2 = document.getElementById("SignupPersonal2").value;
   let number1 = document.getElementById("PhoneNumber01").value;
   let number2 = document.getElementById("PhoneNumber02").value;
   let number3 = document.getElementById("PhoneNumber03").value;
-  let jumin1 = document.getElementById("SignupPersonal").value;
-  let jumin2 = document.getElementById("SignupPersonal2").value;
+  let phone = `${number1}${number2}${number3}`;
   let token = document.getElementById("TokenInput").value; //입력한 인증번호
   let realToken = "";
   let site = document.getElementById("SignupPrefer").value;
@@ -48,14 +49,16 @@ const submitSignup = async () => {
       username,
       jumin1,
       jumin2,
-      number1,
-      number2,
-      number3,
+      phone,
       site,
       pw,
       email,
     })
     .then((res) => {
-      console.log("회원가입이 완료되었습니다. 가입 축하 메일을 확인해주세요");
+      if (res == "가입 완료") {
+        console.log("회원가입이 완료되었습니다. 가입 축하 메일을 확인해주세요");
+      } else {
+        console.log("에러를 확인해주세요");
+      }
     });
 };

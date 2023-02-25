@@ -1,29 +1,32 @@
 import { getToday } from "./utils.js";
+import { checkValidationPhone } from "./phone.js";
 import nodemailer from "nodemailer";
 import "dotenv/config";
 
 export function checkAllInfo(user) {
-  // 1. 다 채워졌는지 확인
+  // 1. 정보 확인
   let objName = {
     username: "이름",
-    number1: "010",
-    number2: "휴대폰 번호",
-    number3: "휴대폰 번호",
     jumin1: "주민번호 앞자리",
     jumin2: "주민번호 뒷자리",
+    phone: "휴대폰번호",
     site: "좋아하는 사이트",
     pw: "비밀번호",
     email: "이메일",
   };
+
   for (let key in user) {
-    console.log(`userDate = ${key}:${user[key]}`);
     if (user[key] == "") {
       console.log(`${objName[key]} 입력란을 확인해주세요`);
       return false;
-    } else if (!user.email.includes("@")) {
+    }
+    if (!user.email.includes("@")) {
       console.log("@ 없음");
       return false;
     }
+  }
+  if (!checkValidationPhone(user.phone)) {
+    return false;
   }
   return true;
 }
