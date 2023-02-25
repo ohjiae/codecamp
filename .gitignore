@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,macos,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,visualstudiocode
 
+# 무시할 디렉토리
+algorithm/
+
+
 ### macOS ###
 # General
 .DS_Store
