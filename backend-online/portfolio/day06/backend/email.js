@@ -4,47 +4,39 @@ import "dotenv/config";
 
 export function checkAllInfo(user) {
   // 1. 다 채워졌는지 확인
-  let { username, jumin1, jumin2, site, pw, email } = user;
   let objName = {
     username: "이름",
-    jumin1: "주민번호",
-    jumin2: "주민번호",
+    number1: "010",
+    number2: "휴대폰 번호",
+    number3: "휴대폰 번호",
+    jumin1: "주민번호 앞자리",
+    jumin2: "주민번호 뒷자리",
     site: "좋아하는 사이트",
     pw: "비밀번호",
+    email: "이메일",
   };
-
   for (let key in user) {
+    console.log(`userDate = ${key}:${user[key]}`);
     if (user[key] == "") {
       console.log(`${objName[key]} 입력란을 확인해주세요`);
       return false;
-    }
-  }
-
-  // 2. 이메일 @ 포함여부 확인
-  let checkEmail = () => {
-    if (email) {
-      if (email.includes("@")) {
-        return true;
-      } else {
-        console.log("@가 포함되어야 합니다.");
-        return false;
-      }
-    } else {
-      console.log("이메일 입력란을 확인해 주세요");
+    } else if (!user.email.includes("@")) {
+      console.log("@ 없음");
       return false;
     }
-  };
+  }
+  return true;
 }
 
 export function getWelcomeTemplate(user) {
-  let { username, phone, site } = user;
+  let { username, number1, number2, number3, site } = user;
   return `
           <html>
               <body>
                   <h1>${username}님 가입을 환영합니다</h1>
                   <hr />
                   <div>이름: ${username}</div>
-                  <div>전화번호: ${phone}</div>
+                  <div>전화번호: ${number1} - ${number2} - ${number3}</div>
                   <div>좋아하는 사이트: ${site}</div>
                   <div>가입일: ${getToday()}</div>
               </body>

@@ -75,17 +75,17 @@ app.get("/starbucks", (req, res) => {
 // 3. 휴대폰 인증 토큰 발급 API
 
 app.post("/tokens/phone", (req, res) => {
-  const myphone = req.body.phone;
+  const myPhone = req.body.phone;
   // 1. 휴대폰번호 자릿수 맞는지 확인하기
-  const isValid = checkValidationPhone(myphone);
+  const isValid = checkValidationPhone(myPhone);
 
   if (isValid) {
     // 2. 핸드폰 토큰 6자리 만들기
-    const mytoken = getToken();
+    const myToken = getToken();
 
     // 3. 핸드폰번호에 토큰 전송하기
-    sendTokenToSMS(myphone, mytoken);
-    res.send(mytoken);
+    sendTokenToSMS(myPhone, myToken);
+    res.send(myToken);
   }
 });
 
@@ -93,15 +93,15 @@ app.post("/tokens/phone", (req, res) => {
 
 app.post("/users", (req, res) => {
   const user = req.body;
-  // 1. 이메일이 정상인지 확인
+  // 1. 다 채워져있는지 확인
   const isValid = checkAllInfo(user);
   if (isValid) {
     // 2. 가입환영 템플릿 만들기
-    const mytemplate = getWelcomeTemplate(user);
+    const myTemplate = getWelcomeTemplate(user);
 
     // 3. 이메일에 가입환영 템플릿 전송하기
-    sendTemplateToEmail(user.email, mytemplate);
-    res.send("가입 완료");
+    sendTemplateToEmail(user.email, myTemplate);
+    res.send("가입완료오옹");
   }
 });
 

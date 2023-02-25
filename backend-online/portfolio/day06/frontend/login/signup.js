@@ -35,7 +35,6 @@ const submitSignup = async () => {
   let number1 = document.getElementById("PhoneNumber01").value;
   let number2 = document.getElementById("PhoneNumber02").value;
   let number3 = document.getElementById("PhoneNumber03").value;
-  let phone = `${number1} - ${number2} - ${number3}`;
   let jumin1 = document.getElementById("SignupPersonal").value;
   let jumin2 = document.getElementById("SignupPersonal2").value;
   let token = document.getElementById("TokenInput").value; //입력한 인증번호
@@ -49,7 +48,9 @@ const submitSignup = async () => {
       username,
       jumin1,
       jumin2,
-      phone,
+      number1,
+      number2,
+      number3,
       site,
       pw,
       email,
