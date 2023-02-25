@@ -22,8 +22,7 @@ const getValidationNumber = async () => {
       // if (token == realToken) {
       //   return true;
       // } else {
-      //   document.getElementsByClassName("NumberValidationBtn").innerText =
-      //     "인증 실패";
+      //   document.getElementsByClassName("NumberValidationBtn").innerText = "인증 실패";
       // }
       // submitToken()?
     });

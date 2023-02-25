@@ -5,11 +5,7 @@ import { options } from "./swagger/config.js";
 import cors from "cors";
 import "dotenv/config";
 import { checkValidationPhone, getToken, sendTokenToSMS } from "./phone.js";
-import {
-  checkAllInfo,
-  getWelcomeTemplate,
-  sendTemplateToEmail,
-} from "./email.js";
+import { checkAllInfo, getWelcomeTemplate, sendTemplateToEmail } from "./email.js";
 
 const app = express();
 app.use(cors());

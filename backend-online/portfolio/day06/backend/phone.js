@@ -5,23 +5,19 @@ export function checkValidationPhone(phoneNum) {
   if (phoneNum.length !== 10 && phoneNum.length !== 11) {
     console.log("핸드폰 번호를 제대로 입력해 주세요");
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
 export function getToken() {
-  let mycount = 6;
-  const result = String(Math.floor(Math.random() * 10 ** mycount)).padStart(
-    mycount,
-    "0"
-  );
+  let myCount = 6;
+  const result = String(Math.floor(Math.random() * 10 ** myCount)).padStart(myCount, "0");
   return result;
 }
 
 export async function sendTokenToSMS(phoneNum, token) {
-  const mysms = coolsms.default; // SDK 가져오기
-  const messageService = new mysms(process.env.SMS_KEY, process.env.SMS_SECRET);
+  const mySms = coolsms.default; // SDK 가져오기
+  const messageService = new mySms(process.env.SMS_KEY, process.env.SMS_SECRET);
   const result = await messageService.sendOne({
     to: phoneNum,
     from: process.env.SMS_SENDER,
