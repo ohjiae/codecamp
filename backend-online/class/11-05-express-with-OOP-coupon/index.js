@@ -1,5 +1,4 @@
 import { Express } from "express"
-import { CashService } from "./cash.js"
 import { ProductController } from "./mvc/controllers/product.controllers.js"
 import { CouponController } from "./mvc/controllers/coupon.controllers.js"
 const app = express()

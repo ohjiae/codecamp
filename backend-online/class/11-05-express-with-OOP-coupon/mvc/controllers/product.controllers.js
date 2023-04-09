@@ -1,3 +1,6 @@
+import { ProductService } from "./services/product.service.js"
+import { CashService } from "./services/cash.service.js"
+
 export class ProductController {
     buyProduct = (req, res) => {
         // 1. 가진 돈을 검증하는 코드 (10줄 => 2줄)
